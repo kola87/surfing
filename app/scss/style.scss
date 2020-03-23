@@ -110,12 +110,11 @@
   top: 0;
   left: 0;
 }
-.header__search{
+.header__search {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 .menu {
-  
   &__list {
     text-align: center;
     display: grid;
@@ -172,45 +171,118 @@
     top: 0;
   }
 }
-.header__map{
+.header__map {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 3;
 }
-.header__arrows{
+.header__arrows {
   position: absolute;
   left: 210px;
   bottom: 40px;
   z-index: 3;
 }
 
-.line-animation{
+.line-animation {
   stroke-dashoffset: 600;
   stroke-dasharray: 600;
   animation: anim-dash-line 5s infinite 6s;
 }
 
-@keyframes anim-dash-line{
- to{
-   stroke-dashoffset: 0;
- }
+@keyframes anim-dash-line {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
-.serf{
-  padding: 160px 0 210px;
-  background-image: url(/image/serf_bg_img.svg);
+.surf {
+  padding: 160px 0 120px;
+  background-image: url(/image/surf_bg_img.svg);
   background-position: right 200px;
   background-repeat: no-repeat;
   background-size: auto;
 }
-.serf__subtitle{
+.surf__subtitle {
   text-align: right;
   padding-right: 80px;
   margin-top: -86px;
 }
+.surf-box {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__inner {
+    min-height: 750px;
+    background: rgba(#1c2121, 0.85);
+    position: relative;
+    transition: all 2s;
+    &:hover{
+      background: rgba(#1c2121, 0.3);
+      .surf-box__inner-btn{
+        display: block;
+      }
+    }
+  }
+}
+.surf-slider {
+  padding-top: 110px;
+  .slider-arrows {
+    top: 50px;
+    opacity: 0.25;
+  }
+}
 
+.slick-slide:nth-child(4n + 1) {
+  .surf-box {
+    margin-top: 32px;
+  }
+}
+.slick-slide:nth-child(4n + 3) {
+  .surf-box {
+    margin-top: 39px;
+  }
+}
+.slick-current{
+  .surf-box__inner-btn{
+    display: block;
+  }
+  .surf-box__inner{
+    background: rgba(#1c2121, 0.3);
+  }
+}
 
+.surf-box__inner-title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 36px;
+  padding: 72px 0 0 40px;
+  width: 140px;
+}
+.surf-box__inner-location {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 8px;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 40px;
+  bottom: 80px;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+
+  span {
+    font-weight: 100;
+  }
+}
+.surf-box__inner-btn {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
 
 @import "media";
 

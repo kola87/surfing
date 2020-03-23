@@ -34,7 +34,7 @@ gulp.task('js', function(){
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('css', function(){
+gulp.task('css', async function(){
     return gulp.src([
         'node_modules/normalize.css/normalize.css',
         'node_modules/slick-carousel/slick/slick.css',
@@ -46,12 +46,12 @@ gulp.task('css', function(){
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('html', function(){
+gulp.task('html', async function(){
     return gulp.src('app/*.html')
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('script', function(){
+gulp.task('script', async function(){
     return gulp.src('app/js/*.js')
     .pipe(browserSync.reload({stream: true}))
 });
